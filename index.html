@@ -1,10 +1,10 @@
-<!doctype html>
+  <!doctype html>
 <html lang="es">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Planeta Trevare — Sabores de otra galaxia</title>
-<meta name="description" content="Hot dogs especiales, Cráter Prime (pollo frito) y papas craterizadas. Fast food retro‑futurista.">
+<meta name="description" content="Hot dogs especiales, Cráter Prime y papas craterizadas. Fast food retro‑futurista en San Miguel del Monte.">
 <style>
   :root{--red:#8a0e12;--mustard:#d6a011;--cream:#f6efe6;--ink:#0b0b0b}
   *{box-sizing:border-box} html,body{height:100%}
@@ -12,9 +12,7 @@
        background:radial-gradient(1200px 800px at 10% -10%,#2a2a2a 0%,#161616 60%,var(--ink) 100%)}
   .wrap{max-width:1080px;margin:0 auto;padding:22px}
   header{display:flex;align-items:center;gap:14px;margin:6px 0 20px}
-  /* Logo simple por texto (luego lo cambiamos por tu PNG) */
-  .logo{width:60px;height:60px;border-radius:14px;background:#fff;display:grid;place-items:center;
-        color:#111;font-weight:900;letter-spacing:.2px;line-height:1;text-align:center;font-size:11px}
+  .logo{width:60px;height:60px;border-radius:14px;background:#fff;object-fit:contain;padding:6px}
   .brand h1{margin:0;font-size:24px;font-weight:900;letter-spacing:.4px}
   .brand small{opacity:.85}
 
@@ -40,7 +38,6 @@
   .info{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:8px}
   .panel{padding:14px;border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
          border:1px dashed rgba(255,255,255,.15)}
-
   footer{opacity:.7;border-top:1px dashed rgba(255,255,255,.15);padding:18px 0;margin-top:24px;font-size:12px}
   a.link{color:var(--mustard);font-weight:700;text-decoration:none}
 </style>
@@ -48,10 +45,11 @@
 <body>
   <div class="wrap">
     <header>
-      <div class="logo">PLANETA<br>TREVARE</div>
+      <!-- Asegurate de que el archivo en el repo se llame exactamente logo.png -->
+      <img src="logo.png" alt="Planeta Trevare" class="logo" />
       <div class="brand">
         <h1>Planeta Trevare</h1>
-        <small>Fast Food · Retro‑Futurista</small>
+        <small>@planetatrevare · Fast Food Retro‑Futurista</small>
       </div>
     </header>
 
@@ -61,7 +59,7 @@
       <p>Hot dogs especiales, pollo frito <strong>Cráter Prime</strong> y papas craterizadas. Pedí por WhatsApp o pasá por el local.</p>
       <div class="cta">
         <a class="btn primary" href="https://wa.me/5492271414132?text=Hola%20Planeta%20Trevare!%20Quiero%20hacer%20un%20pedido%20🚀" target="_blank" rel="noreferrer">Hacer pedido por WhatsApp</a>
-        <a class="btn" href="#menu">Ver menú</a>
+        <a class="btn" href="#horarios">Ver horarios</a>
       </div>
     </section>
 
@@ -84,19 +82,20 @@
       </div>
     </section>
 
-    <section class="info">
+    <section id="horarios" class="info">
       <div class="panel">
         <h3>Horarios</h3>
-        <p class="small">Mi–Do 19:30–00:00 · Vi–Sa 19:30–01:00</p>
+        <p class="small">🗓️ <strong>Martes a Jueves:</strong> 12:00–14:00 y 19:00–23:00</p>
+        <p class="small">🗓️ <strong>Viernes a Domingo:</strong> 12:00–14:00 y 19:00–00:00</p>
       </div>
       <div class="panel">
         <h3>Ubicación</h3>
-        <p class="small">San Miguel del Monte, Buenos Aires</p>
-        <p><a class="link" href="https://maps.google.com?q=San+Miguel+del+Monte+Buenos+Aires" target="_blank">Abrir en Google Maps</a></p>
+        <p class="small">📍 Giganacovo 480, San Miguel del Monte</p>
+        <p><a class="link" href="https://maps.google.com/?q=Giganacovo+480,+San+Miguel+del+Monte,+Buenos+Aires" target="_blank" rel="noreferrer">Abrir en Google Maps</a></p>
       </div>
       <div class="panel">
         <h3>Redes</h3>
-        <p class="small"><a class="link" href="#" target="_blank" rel="noreferrer">Instagram</a> · <a class="link" href="#" target="_blank" rel="noreferrer">TikTok</a></p>
+        <p class="small"><a class="link" href="https://instagram.com/planetatrevare" target="_blank" rel="noreferrer">@planetatrevare</a></p>
       </div>
     </section>
 
