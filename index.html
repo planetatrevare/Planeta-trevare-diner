@@ -4,10 +4,10 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Planeta Trevare — Diner 1955</title>
-<meta name="description" content="Menú retro‑futurista. Armá tu pedido y enviá por WhatsApp.">
+<meta name="description" content="Menú retro‑futurista. Armá tu pedido y envialo por WhatsApp.">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-:root{--red:#b31319;--mustard:#e0b015;--cream:#fff7e9;--ink:#0b0b0b;--panel:#1b1614;--line:rgba(255,255,255,.12)}
+:root{--red:#b31319;--mustard:#e0b015;--cream:#fff7e9;--line:rgba(255,255,255,.12)}
 *{box-sizing:border-box} html,body{height:100%}
 body{margin:0;background:radial-gradient(1200px 800px at 10% -10%,#2a2a2a 0%,#141414 60%,#0b0b0b 100%);color:#fff;font-family:Montserrat,system-ui,Arial}
 .wrap{max-width:1100px;margin:0 auto;padding:20px}
@@ -18,8 +18,8 @@ header{display:flex;gap:14px;align-items:center}
 .sub{opacity:.9}
 .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
 a.link{color:var(--mustard);font-weight:800;text-decoration:none}
-.marquee{margin:16px 0;padding:12px;border:2px dashed var(--line);border-radius:18px;background:rgba(255,255,255,.04)}
 .panel{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid var(--line);border-radius:18px;padding:14px;margin:16px 0}
+.marquee{margin:16px 0;padding:12px;border:2px dashed var(--line);border-radius:18px;background:rgba(255,255,255,.04)}
 .tabs{display:flex;gap:8px;flex-wrap:wrap}
 .tab{cursor:pointer;border:none;border-radius:999px;padding:10px 14px;background:linear-gradient(#262626,#1a1a1a);color:#fff;font-weight:900}
 .tab.active{background:linear-gradient(180deg,var(--red),#760a0e)}
@@ -31,7 +31,7 @@ a.link{color:var(--mustard);font-weight:800;text-decoration:none}
 .desc{opacity:.85;font-size:13px;min-height:32px}
 .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:8px}
 .price{font-weight:900}
-input[type="number"], select{background:#101010;border:1px solid #333;color:#fff;border-radius:10px;padding:8px}
+input[type="number"]{background:#101010;border:1px solid #333;color:#fff;border-radius:10px;padding:8px;width:70px}
 .btn{cursor:pointer;border-radius:12px;border:1px solid #333;background:linear-gradient(#212121,#171717);color:#fff;font-weight:900;padding:10px 14px;text-decoration:none}
 .btn.primary{background:linear-gradient(180deg,var(--red),#7e0c10);border-color:#4a070a}
 .cart .line{display:flex;justify-content:space-between;gap:10px;margin:6px 0}
@@ -43,7 +43,7 @@ footer{opacity:.75;text-align:center;border-top:1px dashed var(--line);padding:1
 <body>
 <div class="wrap">
   <header>
-    <img src="logo.png" alt="Planeta Trevare" class="logo"
+    <img src="images/LOGO%20TREVARE.png" alt="Planeta Trevare" class="logo"
          onerror="this.outerHTML='<div class=&quot;logo&quot; style=&quot;display:grid;place-items:center;color:#111;font-weight:900;letter-spacing:.2px;line-height:1;text-align:center;font-size:11px&quot;>PLANETA<br>TREVARE</div>'">
     <div>
       <div class="badge">DINER · 1955</div>
@@ -88,38 +88,52 @@ footer{opacity:.75;text-align:center;border-top:1px dashed var(--line);padding:1
 </div>
 
 <script>
-/* ================== ZONA EDITABLE — TU MENÚ ==================
-   cat: categoría · name: nombre · price: precio · desc: descripción
-   pic: si subís imágenes a /img, poné la ruta (ej: "img/dog-clasico.jpg")
-   👉 Yo después lo reemplazo con TODOS tus ítems reales (tal cual Fudo).
-*/
+/* ================== MENÚ (fotos con tus nombres reales) ================== */
 const MENU = [
-  // HOT DOGS — ejemplos
-  {cat:"Hot Dogs", name:"Clásico Galáctico", price:4500, desc:"Pan suave, salchicha, aderezo de la casa", pic:""},
-  {cat:"Hot Dogs", name:"Astro‑Bacon", price:5200, desc:"Bacon crocante + cheddar", pic:""},
-  {cat:"Hot Dogs", name:"Pizza Lunar", price:5200, desc:"Salsa de tomate + muzza", pic:""},
-  {cat:"Hot Dogs", name:"Nacho Intergaláctico", price:6000, desc:"Cheddar + nachos", pic:""},
+  // HOT DOGS
+  {cat:"Hot Dogs", name:"Clásico Galáctico", price:4500,
+   desc:"Pan suave, salchicha, aderezo de la casa", pic:"images/clasico.jpeg"},
+  {cat:"Hot Dogs", name:"Astro‑Bacon", price:5200,
+   desc:"Bacon crocante + cheddar", pic:"images/nashville.jpeg"},
+  {cat:"Hot Dogs", name:"Pizza Lunar", price:5200,
+   desc:"Salsa de tomate + muzza", pic:"images/tradi.jpeg"},
+  {cat:"Hot Dogs", name:"Nacho Intergaláctico", price:6000,
+   desc:"Cheddar + nachos", pic:"images/nacho.jpeg"},
+  {cat:"Hot Dogs", name:"Nórdico", price:5800,
+   desc:"Pepinos, eneldo, salsa especial", pic:"images/nordico.jpeg"},
+  {cat:"Hot Dogs", name:"Picoso", price:5800,
+   desc:"Salsa picante de la casa", pic:"images/picoso.jpeg"},
+  {cat:"Hot Dogs", name:"Provoleta", price:6100,
+   desc:"Provoleta fundida + chimichurri", pic:"images/provoleta.jpeg"},
 
-  // CRÁTER PRIME (POLLO)
-  {cat:"Cráter Prime (Pollo)", name:"Filet XL Cráter Pro", price:6900, desc:"Rebozado crujiente XL", pic:""},
-  {cat:"Cráter Prime (Pollo)", name:"Meteoritos Trevare", price:5900, desc:"Popcorn de pollo + salsas", pic:""},
+  // CRÁTER PRIME (POLLO) / METEORITOS
+  {cat:"Cráter Prime (Pollo)", name:"Filet XL Cráter Pro", price:6900,
+   desc:"Rebozado crujiente XL", pic:"images/m%20completo.jpeg"},
+  {cat:"Cráter Prime (Pollo)", name:"Meteoritos Trevare", price:5900,
+   desc:"Popcorn de pollo + salsas", pic:"images/vnz.jpeg"},
 
-  // PAPAS / EXTRAS
-  {cat:"Papas & Extras", name:"Papas craterizadas", price:3900, desc:"Crocantes · corte perfecto", pic:""},
-  {cat:"Papas & Extras", name:"Cheddar Extra", price:1200, desc:"Adicional", pic:""},
+  // PAPAS & EXTRAS
+  {cat:"Papas & Extras", name:"Papas craterizadas", price:3900,
+   desc:"Crocantes · corte perfecto", pic:"images/salchipapa.jpeg"},
+  {cat:"Papas & Extras", name:"Guacamole", price:1800,
+   desc:"Adicional", pic:"images/guacamole.jpeg"},
+  {cat:"Papas & Extras", name:"Cheddar Extra", price:1200,
+   desc:"Adicional de cheddar", pic:"images/tradis.jpeg"},
 
-  // CORN DOGS (si usás)
-  {cat:"Corn Dogs", name:"Clásico", price:4800, desc:"Salchicha rebozada", pic:""},
+  // CORN DOGS
+  {cat:"Corn Dogs", name:"Clásico", price:4800,
+   desc:"Salchicha rebozada", pic:"images/tradi.jpeg"},
 
-  // BEBIDAS
-  {cat:"Bebidas", name:"Coca-Cola 500ml", price:2200, desc:"", pic:""},
-  {cat:"Bebidas", name:"Sprite 500ml", price:2200, desc:"", pic:""},
+  // BEBIDAS (genéricas por ahora)
+  {cat:"Bebidas", name:"Coca-Cola 500ml", price:2200, desc:"", pic:"images/tradis.jpeg"},
+  {cat:"Bebidas", name:"Sprite 500ml",  price:2200, desc:"", pic:"images/tradis.jpeg"},
 
   // SNACKS
-  {cat:"Snacks", name:"Tequeños", price:4500, desc:"Palitos crujientes de queso", pic:""}
+  {cat:"Snacks", name:"Tequeños", price:4500,
+   desc:"Palitos crujientes de queso", pic:"images/tradis.jpeg"},
 ];
 const PHONE = "5492271414132";
-/* ================= FIN ZONA EDITABLE ================= */
+/* ================== FIN MENÚ ================== */
 
 const pesos = n => "$" + n.toLocaleString("es-AR");
 const $ = s => document.querySelector(s);
@@ -142,7 +156,7 @@ function btn(text, active, on){ const b=document.createElement("button"); b.clas
 function render(){
   renderTabs(); catEl.innerHTML="";
   const items = MENU.filter(x=>!filtro || x.cat===filtro);
-  // agrupar por cat
+  // agrupar por categoría
   const byCat={}; items.forEach(p=>{(byCat[p.cat]??=[]).push(p);});
   Object.entries(byCat).forEach(([cat,arr])=>{
     const box=document.createElement("div"); box.className="panel"; box.style.gridColumn="1/-1";
@@ -208,4 +222,3 @@ render();
 </script>
 </body>
 </html>
-
