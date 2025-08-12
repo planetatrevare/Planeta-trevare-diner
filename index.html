@@ -3,80 +3,98 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Planeta Trevare — Fast Food</title>
-<meta name="description" content="Sabores de otra galaxia. Fast food retro-futurista estilo diner americano de los 50.">
+<title>Planeta Trevare — Sabores de otra galaxia</title>
+<meta name="description" content="Hot dogs especiales, Cráter Prime (pollo frito) y papas craterizadas. Fast food retro‑futurista.">
 <style>
-  :root{--red:#8a0e12;--mustard:#d6a011;--cream:#f6efe6;--dark:#0b0b0b}
-  *{box-sizing:border-box}html,body{height:100%}
-  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:var(--cream);
-       background:radial-gradient(1200px 800px at 10% -10%,#2b2b2b 0%,#131313 60%,var(--dark) 100%)}
-  .wrap{max-width:960px;margin:0 auto;padding:20px}
-  header{display:flex;align-items:center;gap:12px;margin:8px 0 22px}
-  .logo{
-    width:56px;height:56px;border-radius:12px;background:#fff;display:grid;place-items:center;
-    font-weight:900;color:#111;letter-spacing:.2px;font-size:10px;line-height:1;text-align:center
+  :root{
+    --red:#8a0e12; --mustard:#d6a011; --cream:#f6efe6; --ink:#0b0b0b; --ink2:#141414;
   }
-  .brand{line-height:1.05}
-  .brand h1{font-size:22px;margin:0;font-weight:900;letter-spacing:.3px}
+  *{box-sizing:border-box} html,body{height:100%}
+  body{
+    margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    color:var(--cream);
+    background: radial-gradient(1200px 800px at 10% -10%, #2b2b2b 0%, #1a1a1a 60%, var(--ink) 100%);
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:22px}
+  header{display:flex;align-items:center;gap:14px;margin:6px 0 20px}
+  .logo{
+    width:60px;height:60px;border-radius:14px;background:#fff;display:grid;place-items:center;
+    color:#111;font-weight:900;letter-spacing:.2px;line-height:1;text-align:center;font-size:11px
+  }
+  .brand h1{margin:0;font-size:24px;font-weight:900;letter-spacing:.4px}
   .brand small{opacity:.8}
-  .badge{display:inline-block;background:var(--mustard);color:#1a1a1a;padding:6px 10px;font-weight:800;
-         border-radius:999px;text-transform:uppercase;font-size:11px;letter-spacing:.6px}
-  h2{font-size:38px;margin:14px 0 10px;font-weight:900;line-height:1.05}
-  h2 .accent{color:var(--mustard)}
-  p{opacity:.92;max-width:70ch}
-  .cta{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 8px}
-  .btn{padding:12px 18px;border-radius:14px;border:1px solid #333;background:linear-gradient(#1f1f1f,#171717);
-       color:#fff;font-weight:800;text-decoration:none;display:inline-block}
-  .btn.primary{background:linear-gradient(180deg,#b01318,var(--red));border-color:#5e0a0d}
-  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:22px 0 10px}
-  .card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
-        border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:14px}
+  .hero{
+    margin:24px 0 18px; padding:18px; border-radius:18px;
+    background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+    border:1px solid rgba(255,255,255,.08)
+  }
+  .badge{
+    display:inline-block;background:var(--mustard);color:#111;padding:6px 10px;border-radius:999px;
+    text-transform:uppercase;font-size:11px;font-weight:800;letter-spacing:.6px
+  }
+  h2{font-size:40px;line-height:1.05;margin:10px 0 8px;font-weight:900}
+  .accent{color:var(--mustard)}
+  p{opacity:.92;max-width:75ch}
+  .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+  .btn{
+    padding:12px 18px;border-radius:14px;border:1px solid #333;background:linear-gradient(#1f1f1f,#171717);
+    color:#fff;font-weight:800;text-decoration:none;display:inline-block
+  }
+  .btn.primary{background: linear-gradient(180deg, #b01318, var(--red)); border-color:#5e0a0d}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:20px 0 8px}
+  .card{
+    padding:14px;border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
+    border:1px solid rgba(255,255,255,.09)
+  }
   .card h3{margin:6px 0}
-  footer{opacity:.7;border-top:1px dashed rgba(255,255,255,.15);padding:16px 0;margin-top:18px;font-size:12px}
+  .small{font-size:14px;opacity:.9}
+  footer{opacity:.7;border-top:1px dashed rgba(255,255,255,.15);padding:18px 0;margin-top:24px;font-size:12px}
 </style>
 </head>
 <body>
   <div class="wrap">
     <header>
+      <!-- Logo simple (texto). Luego lo cambiamos por tu PNG sin problema -->
       <div class="logo">PLANETA<br>TREVARE</div>
       <div class="brand">
         <h1>Planeta Trevare</h1>
-        <small>Fast Food · Retro-Futurista</small>
+        <small>Fast Food · Retro‑Futurista</small>
       </div>
     </header>
 
-    <span class="badge">Estilo diner 50s · Profesional</span>
-    <h2>Sabores de <span class="accent">otra galaxia</span> · al nivel de las grandes cadenas</h2>
-    <p>
-      Hot dogs especiales, pollo frito <strong>Cráter Prime</strong> y papas craterizadas.
-      Branding retro-futurista con estética diner de 1955. Pedí por WhatsApp o pasá por el local.
-    </p>
+    <section class="hero">
+      <span class="badge">Diner 50s · Profesional</span>
+      <h2>Sabores de <span class="accent">otra galaxia</span> · al nivel de las grandes cadenas</h2>
+      <p>
+        Hot dogs especiales, pollo frito <strong>Cráter Prime</strong> y papas craterizadas.
+        Branding retro‑futurista con estética diner de 1955. Pedí por WhatsApp o pasá por el local.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="https://wa.me/5492271414132?text=Hola%20Planeta%20Trevare!%20Quiero%20hacer%20un%20pedido%20🚀" target="_blank" rel="noreferrer">
+          Hacer pedido por WhatsApp
+        </a>
+        <a class="btn" href="#menu">Ver menú</a>
+      </div>
+    </section>
 
-    <div class="cta">
-      <a class="btn primary" href="https://wa.me/5492271414132?text=Hola%20Planeta%20Trevare!%20Quiero%20hacer%20un%20pedido%20🚀" target="_blank" rel="noreferrer">
-        Hacer pedido por WhatsApp
-      </a>
-      <a class="btn" href="#menu">Ver menú</a>
-    </div>
-
-    <div id="menu" class="cards">
+    <section id="menu" class="grid">
       <div class="card">
         <h3>Hot Dogs Espaciales</h3>
-        <p>Clásico Galáctico, Astro-Bacon, McPlanet, Pizza Lunar, Nacho Intergaláctico…</p>
+        <p class="small">Clásico Galáctico, Astro‑Bacon, McPlanet, Pizza Lunar, Nacho Intergaláctico…</p>
       </div>
       <div class="card">
         <h3>Cráter Prime (pollo)</h3>
-        <p>Filet XL, rebozado <strong>Cráter Pro</strong> · combos con papas craterizadas.</p>
+        <p class="small">Filet XL, rebozado <strong>Cráter Pro</strong>. Combos con papas craterizadas.</p>
       </div>
       <div class="card">
         <h3>Meteoritos Trevare</h3>
-        <p>Popcorn style · textura ultra crujiente · salsas caseras.</p>
+        <p class="small">Popcorn style · ultra crujientes · salsas caseras.</p>
       </div>
       <div class="card">
         <h3>Bebidas & Extras</h3>
-        <p>Refrescos, batidos, aderezos premium y más.</p>
+        <p class="small">Refrescos, batidos, aderezos premium y más.</p>
       </div>
-    </div>
+    </section>
 
     <footer>© <span id="y"></span> Planeta Trevare — San Miguel del Monte, Buenos Aires.</footer>
   </div>
