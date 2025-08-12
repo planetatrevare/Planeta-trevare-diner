@@ -5,122 +5,121 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Planeta Trevare — Diner 1955</title>
 <meta name="description" content="Menú retro‑futurista. Armá tu pedido y enviá por WhatsApp.">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --red:#b31319;--mustard:#e0b015;--cream:#fff7e9;--ink:#1b1b1b;--panel:#261f1d;
-    --shadow:0 8px 24px rgba(0,0,0,.25)
-  }
-  *{box-sizing:border-box} html,body{height:100%}
-  body{margin:0;background:radial-gradient(1200px 800px at 10% -10%,#2a2a2a 0%,#141414 60%,#0b0b0b 100%);
-       color:#fff;font-family:Montserrat,system-ui,Arial}
-  .wrap{max-width:1100px;margin:0 auto;padding:20px}
-  header{display:flex;align-items:center;gap:14px}
-  .logo{width:66px;height:66px;border-radius:16px;background:#fff;object-fit:contain;padding:8px;box-shadow:var(--shadow)}
-  .badge{display:inline-block;background:var(--mustard);color:#111;font-weight:800;padding:6px 10px;border-radius:999px;letter-spacing:.6px}
-  .title{font-family:"Bebas Neue",system-ui;font-size:56px;line-height:.9;letter-spacing:1px;margin:6px 0;color:var(--cream);text-shadow:0 2px 0 #000}
-  .sub{opacity:.9}
-  .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
-  .link{color:var(--mustard);font-weight:700;text-decoration:none}
-  .marquee{margin:16px 0;padding:14px;border:2px dashed rgba(255,255,255,.15);border-radius:18px;background:rgba(255,255,255,.04)}
-  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
-  .tab{cursor:pointer;border:none;border-radius:999px;padding:10px 14px;background:linear-gradient(#262626,#1a1a1a);color:#fff;font-weight:800}
-  .tab.active{background:linear-gradient(180deg,var(--red),#760a0e)}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-  .card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.1);
-        border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
-  .pic{height:140px;background:#333 url('') center/cover no-repeat}
-  .card .cnt{padding:12px}
-  .name{font-weight:800;margin:0 0 4px}
-  .desc{opacity:.85;font-size:13px;min-height:32px}
-  .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:10px}
-  .price{font-weight:900}
-  input[type="number"], select{
-    background:#101010;border:1px solid #333;color:#fff;border-radius:10px;padding:8px
-  }
-  .btn{cursor:pointer;border-radius:12px;border:1px solid #333;background:linear-gradient(#212121,#171717);color:#fff;font-weight:800;padding:10px 14px;text-decoration:none}
-  .btn.primary{background:linear-gradient(180deg,var(--red),#7e0c10);border-color:#4a070a}
-  .panel{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.12);
-         border-radius:18px;padding:14px;margin:16px 0}
-  .cart{position:sticky;bottom:10px;z-index:5}
-  .cart .line{display:flex;justify-content:space-between;gap:10px;margin:6px 0}
-  .total{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
-  footer{opacity:.75;text-align:center;border-top:1px dashed rgba(255,255,255,.15);padding:16px;margin-top:18px;font-size:12px}
-  @media (max-width:640px){ .title{font-size:42px} .pic{height:120px} }
+:root{--red:#b31319;--mustard:#e0b015;--cream:#fff7e9;--ink:#0b0b0b;--panel:#1b1614;--line:rgba(255,255,255,.12)}
+*{box-sizing:border-box} html,body{height:100%}
+body{margin:0;background:radial-gradient(1200px 800px at 10% -10%,#2a2a2a 0%,#141414 60%,#0b0b0b 100%);color:#fff;font-family:Montserrat,system-ui,Arial}
+.wrap{max-width:1100px;margin:0 auto;padding:20px}
+header{display:flex;gap:14px;align-items:center}
+.logo{width:66px;height:66px;border-radius:16px;background:#fff;object-fit:contain;padding:8px}
+.title{font-family:"Bebas Neue";font-size:56px;line-height:.9;margin:2px 0;color:var(--cream);letter-spacing:1px;text-shadow:0 2px 0 #000}
+.badge{display:inline-block;background:var(--mustard);color:#111;font-weight:900;padding:6px 10px;border-radius:999px;letter-spacing:.6px}
+.sub{opacity:.9}
+.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+a.link{color:var(--mustard);font-weight:800;text-decoration:none}
+.marquee{margin:16px 0;padding:12px;border:2px dashed var(--line);border-radius:18px;background:rgba(255,255,255,.04)}
+.panel{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid var(--line);border-radius:18px;padding:14px;margin:16px 0}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tab{cursor:pointer;border:none;border-radius:999px;padding:10px 14px;background:linear-gradient(#262626,#1a1a1a);color:#fff;font-weight:900}
+.tab.active{background:linear-gradient(180deg,var(--red),#760a0e)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03))}
+.pic{height:140px;background:#343434 url('') center/cover no-repeat}
+.cnt{padding:12px}
+.name{margin:0 0 4px;font-size:18px;font-weight:900}
+.desc{opacity:.85;font-size:13px;min-height:32px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.price{font-weight:900}
+input[type="number"], select{background:#101010;border:1px solid #333;color:#fff;border-radius:10px;padding:8px}
+.btn{cursor:pointer;border-radius:12px;border:1px solid #333;background:linear-gradient(#212121,#171717);color:#fff;font-weight:900;padding:10px 14px;text-decoration:none}
+.btn.primary{background:linear-gradient(180deg,var(--red),#7e0c10);border-color:#4a070a}
+.cart .line{display:flex;justify-content:space-between;gap:10px;margin:6px 0}
+.total{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+footer{opacity:.75;text-align:center;border-top:1px dashed var(--line);padding:16px;margin-top:18px;font-size:12px}
+@media (max-width:640px){ .title{font-size:42px} .pic{height:120px} }
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <img src="logo.png" alt="Planeta Trevare" class="logo"
-           onerror="this.outerHTML='<div class=&quot;logo&quot; style=&quot;display:grid;place-items:center;color:#111;font-weight:900;letter-spacing:.2px;line-height:1;text-align:center;font-size:11px&quot;>PLANETA<br>TREVARE</div>'">
-      <div>
-        <div class="badge">DINER · 1955</div>
-        <div class="title">PLANETA TREVARE</div>
-        <div class="sub">Giganacovo 480 · San Miguel del Monte</div>
-        <div class="links">
-          <a class="link" href="https://www.instagram.com/planetatrevare?igsh=MXJibWZ6MHE2NDA4bg==" target="_blank">Instagram</a>
-          <a class="link" href="https://maps.app.goo.gl/r4xi557wcGsAoPvA6?g_st=ac" target="_blank">Google Maps</a>
-          <a class="link" href="https://wa.me/5492271414132" target="_blank">WhatsApp directo</a>
-        </div>
-      </div>
-    </header>
-
-    <div class="marquee">🕓 Horarios: Mar–Jue 12:00–14:00 y 19:00–23:00 · Vie–Dom 12:00–14:00 y 19:00–00:00</div>
-
-    <!-- Filtros / Tabs -->
-    <div class="panel">
-      <strong>Categorías</strong>
-      <div id="tabs" class="tabs"></div>
-    </div>
-
-    <!-- Productos -->
-    <div id="catalogo" class="grid"></div>
-
-    <!-- Carrito -->
-    <div class="panel cart">
-      <strong>Tu pedido</strong>
-      <div id="carritoVacio" class="sub" style="margin-top:6px">Sin ítems todavía.</div>
-      <div id="carrito"></div>
-      <div class="total"><span>Total estimado</span><strong id="monto">$0</strong></div>
-      <div class="row" style="margin-top:8px">
-        <input id="nombre" type="text" placeholder="Tu nombre (opcional)">
-        <input id="direccion" type="text" placeholder="Dirección si es delivery (opcional)">
-      </div>
-      <div class="row" style="margin-top:8px">
-        <button class="btn" onclick="limpiar()">Limpiar</button>
-        <a class="btn primary" href="#" onclick="enviarWpp(event)">Confirmar por WhatsApp</a>
+<div class="wrap">
+  <header>
+    <img src="logo.png" alt="Planeta Trevare" class="logo"
+         onerror="this.outerHTML='<div class=&quot;logo&quot; style=&quot;display:grid;place-items:center;color:#111;font-weight:900;letter-spacing:.2px;line-height:1;text-align:center;font-size:11px&quot;>PLANETA<br>TREVARE</div>'">
+    <div>
+      <div class="badge">DINER · 1955</div>
+      <div class="title">PLANETA TREVARE</div>
+      <div class="sub">Giganacovo 480 · San Miguel del Monte</div>
+      <div class="links">
+        <a class="link" href="https://www.instagram.com/planetatrevare?igsh=MXJibWZ6MHE2NDA4bg==" target="_blank">Instagram</a>
+        <a class="link" href="https://maps.app.goo.gl/r4xi557wcGsAoPvA6?g_st=ac" target="_blank">Google Maps</a>
+        <a class="link" href="https://wa.me/5492271414132" target="_blank">WhatsApp directo</a>
       </div>
     </div>
+  </header>
 
-    <footer>© <span id="y"></span> Planeta Trevare — Retro diner 1955.</footer>
+  <div class="marquee">🕓 Horarios: Mar–Jue 12:00–14:00 y 19:00–23:00 · Vie–Dom 12:00–14:00 y 19:00–00:00</div>
+
+  <!-- Categorías -->
+  <div class="panel">
+    <strong>Categorías</strong>
+    <div id="tabs" class="tabs"></div>
   </div>
 
+  <!-- Productos -->
+  <div id="catalogo" class="grid"></div>
+
+  <!-- Carrito -->
+  <div class="panel">
+    <strong>Tu pedido</strong>
+    <div id="carritoVacio" class="sub" style="margin-top:6px">Sin ítems todavía.</div>
+    <div id="carrito"></div>
+    <div class="total"><span>Total estimado</span><strong id="monto">$0</strong></div>
+    <div class="row" style="margin-top:8px">
+      <input id="nombre" type="text" placeholder="Tu nombre (opcional)">
+      <input id="direccion" type="text" placeholder="Dirección si es delivery (opcional)">
+    </div>
+    <div class="row" style="margin-top:8px">
+      <button class="btn" onclick="limpiar()">Limpiar</button>
+      <a class="btn primary" href="#" onclick="enviarWpp(event)">Confirmar por WhatsApp</a>
+    </div>
+  </div>
+
+  <footer>© <span id="y"></span> Planeta Trevare — Retro diner 1955.</footer>
+</div>
+
 <script>
-/* ========= EDITÁS SOLO ESTO PARA TU MENÚ =========
-   Podés copiar/pegar líneas y categorías.
-   pic: si subís imagenes al repo (carpeta /img), poné la ruta (ej: "img/dog-classic.jpg")
+/* ================== ZONA EDITABLE — TU MENÚ ==================
+   cat: categoría · name: nombre · price: precio · desc: descripción
+   pic: si subís imágenes a /img, poné la ruta (ej: "img/dog-clasico.jpg")
+   👉 Yo después lo reemplazo con TODOS tus ítems reales (tal cual Fudo).
 */
 const MENU = [
-  // HOT DOGS (ejemplos — reemplazá por los tuyos)
-  {cat:"Hot Dogs", name:"Clásico Galáctico", price:4500, desc:"Pan suave, salchicha, aderezo casa", pic:""},
-  {cat:"Hot Dogs", name:"Astro‑Bacon", price:5200, desc:"Bacon crocante y cheddar", pic:""},
-  {cat:"Hot Dogs", name:"Pizza Lunar", price:5200, desc:"Salsa de tomate y muzza", pic:""},
+  // HOT DOGS — ejemplos
+  {cat:"Hot Dogs", name:"Clásico Galáctico", price:4500, desc:"Pan suave, salchicha, aderezo de la casa", pic:""},
+  {cat:"Hot Dogs", name:"Astro‑Bacon", price:5200, desc:"Bacon crocante + cheddar", pic:""},
+  {cat:"Hot Dogs", name:"Pizza Lunar", price:5200, desc:"Salsa de tomate + muzza", pic:""},
+  {cat:"Hot Dogs", name:"Nacho Intergaláctico", price:6000, desc:"Cheddar + nachos", pic:""},
 
-  // POLLO
+  // CRÁTER PRIME (POLLO)
   {cat:"Cráter Prime (Pollo)", name:"Filet XL Cráter Pro", price:6900, desc:"Rebozado crujiente XL", pic:""},
   {cat:"Cráter Prime (Pollo)", name:"Meteoritos Trevare", price:5900, desc:"Popcorn de pollo + salsas", pic:""},
 
   // PAPAS / EXTRAS
   {cat:"Papas & Extras", name:"Papas craterizadas", price:3900, desc:"Crocantes · corte perfecto", pic:""},
-  {cat:"Papas & Extras", name:"Batido", price:3500, desc:"Vainilla/Chocolate/Frutilla", pic:""},
+  {cat:"Papas & Extras", name:"Cheddar Extra", price:1200, desc:"Adicional", pic:""},
+
+  // CORN DOGS (si usás)
+  {cat:"Corn Dogs", name:"Clásico", price:4800, desc:"Salchicha rebozada", pic:""},
 
   // BEBIDAS
-  {cat:"Bebidas", name:"Gaseosa 500 ml", price:2200, desc:"", pic:""},
-  {cat:"Bebidas", name:"Sprite 500 ml", price:2200, desc:"", pic:""},
+  {cat:"Bebidas", name:"Coca-Cola 500ml", price:2200, desc:"", pic:""},
+  {cat:"Bebidas", name:"Sprite 500ml", price:2200, desc:"", pic:""},
+
+  // SNACKS
+  {cat:"Snacks", name:"Tequeños", price:4500, desc:"Palitos crujientes de queso", pic:""}
 ];
 const PHONE = "5492271414132";
-/* =============== FIN ZONA EDITABLE =============== */
+/* ================= FIN ZONA EDITABLE ================= */
 
 const pesos = n => "$" + n.toLocaleString("es-AR");
 const $ = s => document.querySelector(s);
@@ -130,48 +129,52 @@ document.getElementById("y").textContent = new Date().getFullYear();
 
 const CATS=[...new Set(MENU.map(x=>x.cat))];
 let filtro=null;
-const CART=new Map(); // key=name, val={qty,price}
+const CART=new Map(); // name -> {qty, price}
 
 function renderTabs(){
   tabsEl.innerHTML="";
-  const all=document.createElement("button"); all.className="tab"+(filtro? "": " active"); all.textContent="Todas";
-  all.onclick=()=>{filtro=null;render();}; tabsEl.appendChild(all);
-  CATS.forEach(c=>{
-    const b=document.createElement("button"); b.className="tab"+(filtro===c?" active":""); b.textContent=c;
-    b.onclick=()=>{filtro=c; render();}; tabsEl.appendChild(b);
-  });
+  const all=btn("Todas", !filtro, ()=>{filtro=null; render();});
+  tabsEl.appendChild(all);
+  CATS.forEach(c=>tabsEl.appendChild(btn(c, filtro===c, ()=>{filtro=c; render();})));
 }
+function btn(text, active, on){ const b=document.createElement("button"); b.className="tab"+(active?" active":""); b.textContent=text; b.onclick=on; return b; }
 
 function render(){
-  renderTabs();
-  catEl.innerHTML="";
+  renderTabs(); catEl.innerHTML="";
   const items = MENU.filter(x=>!filtro || x.cat===filtro);
-  items.forEach(p=>{
-    const card=document.createElement("div"); card.className="card";
-    card.innerHTML = `
-      <div class="pic" style="${p.pic?`background-image:url('${p.pic}')`:"background:#3a3a3a"}"></div>
-      <div class="cnt">
-        <h3 class="name">${p.name}</h3>
-        <div class="desc">${p.desc||""}</div>
-        <div class="row">
-          <div class="price">${pesos(p.price)}</div>
-          <input type="number" min="1" value="1">
-          <button class="btn primary">Agregar</button>
-        </div>
-      </div>`;
-    const qty=card.querySelector('input[type="number"]');
-    card.querySelector("button").onclick=()=>add(p, Math.max(1,parseInt(qty.value||"1",10)));
-    catEl.appendChild(card);
+  // agrupar por cat
+  const byCat={}; items.forEach(p=>{(byCat[p.cat]??=[]).push(p);});
+  Object.entries(byCat).forEach(([cat,arr])=>{
+    const box=document.createElement("div"); box.className="panel"; box.style.gridColumn="1/-1";
+    box.innerHTML=`<h3 style="margin:0 0 8px;font-family:'Bebas Neue';font-size:28px;letter-spacing:.5px">${cat}</h3><div class="grid"></div>`;
+    const g=box.querySelector(".grid"); arr.forEach(p=>g.appendChild(card(p)));
+    catEl.appendChild(box);
   });
   renderCart();
+}
+
+function card(p){
+  const d=document.createElement("div"); d.className="card";
+  d.innerHTML = `
+    <div class="pic" style="${p.pic?`background-image:url('${p.pic}')`:""}"></div>
+    <div class="cnt">
+      <div class="name">${p.name}</div>
+      <div class="desc">${p.desc||""}</div>
+      <div class="row">
+        <div class="price">${pesos(p.price)}</div>
+        <input type="number" min="1" value="1">
+        <button class="btn primary">Agregar</button>
+      </div>
+    </div>`;
+  const qty=d.querySelector('input[type="number"]');
+  d.querySelector("button").onclick=()=>add(p, Math.max(1,parseInt(qty.value||"1",10)));
+  return d;
 }
 
 function add(prod, q){
   const prev=CART.get(prod.name)||{qty:0,price:prod.price};
-  prev.qty+=q; CART.set(prod.name, prev);
-  renderCart();
+  prev.qty+=q; CART.set(prod.name, prev); renderCart();
 }
-
 function renderCart(){
   cartEl.innerHTML=""; let total=0;
   if(CART.size===0){vacioEl.style.display="block"; montoEl.textContent="$0"; return;}
@@ -184,15 +187,13 @@ function renderCart(){
   }
   montoEl.textContent=pesos(total);
 }
-
 function limpiar(){ CART.clear(); renderCart(); }
 
 function enviarWpp(e){
   e.preventDefault();
   if(CART.size===0){ alert("Agregá al menos 1 producto 🙏"); return; }
   const nombre=$("#nombre").value.trim(), dir=$("#direccion").value.trim();
-  let msg="Hola Planeta Trevare! Quiero hacer un pedido:%0A%0A";
-  let total=0;
+  let msg="Hola Planeta Trevare! Quiero hacer un pedido:%0A%0A"; let total=0;
   for(const [name,item] of CART.entries()){
     const sub=item.qty*item.price; total+=sub;
     msg+=`• ${name} x${item.qty} — ${pesos(sub)}`+"%0A";
@@ -207,3 +208,4 @@ render();
 </script>
 </body>
 </html>
+
