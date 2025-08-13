@@ -25,7 +25,7 @@ a.link{color:var(--mustard);font-weight:800;text-decoration:none}
 .tab.active{background:linear-gradient(180deg,var(--red),#760a0e)}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
 .card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03))}
-.pic{height:140px;background:#343434 url('') center/cover no-repeat}
+.pic{width:100%;height:140px;object-fit:cover;display:block;background:#343434}
 .cnt{padding:12px}
 .name{margin:0 0 4px;font-size:18px;font-weight:900}
 .desc{opacity:.85;font-size:13px;min-height:32px}
@@ -43,7 +43,8 @@ footer{opacity:.75;text-align:center;border-top:1px dashed var(--line);padding:1
 <body>
 <div class="wrap">
   <header>
-    <img src="images/LOGO%20TREVARE.png" alt="Planeta Trevare" class="logo"
+    <img class="logo" alt="Planeta Trevare"
+         src="" onload="this.src=encodeURI('images/LOGO TREVARE.png')"
          onerror="this.outerHTML='<div class=&quot;logo&quot; style=&quot;display:grid;place-items:center;color:#111;font-weight:900;letter-spacing:.2px;line-height:1;text-align:center;font-size:11px&quot;>PLANETA<br>TREVARE</div>'">
     <div>
       <div class="badge">DINER · 1955</div>
@@ -59,16 +60,13 @@ footer{opacity:.75;text-align:center;border-top:1px dashed var(--line);padding:1
 
   <div class="marquee">🕓 Horarios: Mar–Jue 12:00–14:00 y 19:00–23:00 · Vie–Dom 12:00–14:00 y 19:00–00:00</div>
 
-  <!-- Categorías -->
   <div class="panel">
     <strong>Categorías</strong>
     <div id="tabs" class="tabs"></div>
   </div>
 
-  <!-- Productos -->
   <div id="catalogo" class="grid"></div>
 
-  <!-- Carrito -->
   <div class="panel">
     <strong>Tu pedido</strong>
     <div id="carritoVacio" class="sub" style="margin-top:6px">Sin ítems todavía.</div>
@@ -88,7 +86,7 @@ footer{opacity:.75;text-align:center;border-top:1px dashed var(--line);padding:1
 </div>
 
 <script>
-/* ================== MENÚ (fotos con tus nombres reales) ================== */
+/* ========== MENÚ (usa los nombres EXACTOS que subiste) ========== */
 const MENU = [
   // HOT DOGS
   {cat:"Hot Dogs", name:"Clásico Galáctico", price:4500,
@@ -108,7 +106,7 @@ const MENU = [
 
   // CRÁTER PRIME (POLLO) / METEORITOS
   {cat:"Cráter Prime (Pollo)", name:"Filet XL Cráter Pro", price:6900,
-   desc:"Rebozado crujiente XL", pic:"images/m%20completo.jpeg"},
+   desc:"Rebozado crujiente XL", pic:"images/m completo.jpeg"},
   {cat:"Cráter Prime (Pollo)", name:"Meteoritos Trevare", price:5900,
    desc:"Popcorn de pollo + salsas", pic:"images/vnz.jpeg"},
 
@@ -133,7 +131,7 @@ const MENU = [
    desc:"Palitos crujientes de queso", pic:"images/tradis.jpeg"},
 ];
 const PHONE = "5492271414132";
-/* ================== FIN MENÚ ================== */
+/* ================================================================ */
 
 const pesos = n => "$" + n.toLocaleString("es-AR");
 const $ = s => document.querySelector(s);
@@ -156,7 +154,6 @@ function btn(text, active, on){ const b=document.createElement("button"); b.clas
 function render(){
   renderTabs(); catEl.innerHTML="";
   const items = MENU.filter(x=>!filtro || x.cat===filtro);
-  // agrupar por categoría
   const byCat={}; items.forEach(p=>{(byCat[p.cat]??=[]).push(p);});
   Object.entries(byCat).forEach(([cat,arr])=>{
     const box=document.createElement("div"); box.className="panel"; box.style.gridColumn="1/-1";
@@ -169,8 +166,10 @@ function render(){
 
 function card(p){
   const d=document.createElement("div"); d.className="card";
+  const src = p.pic ? encodeURI(p.pic) : "";
   d.innerHTML = `
-    <div class="pic" style="${p.pic?`background-image:url('${p.pic}')`:""}"></div>
+    <img class="pic" src="${src}" alt="${p.name}"
+         onerror="this.src='https://dummyimage.com/800x500/2a2a2a/ffffff&text=Sin+foto'">
     <div class="cnt">
       <div class="name">${p.name}</div>
       <div class="desc">${p.desc||""}</div>
