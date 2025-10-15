@@ -1,223 +1,276 @@
-<!doctype html>
-<html lang="es">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Planeta Trevare — Diner 1955</title>
-<meta name="description" content="Menú retro‑futurista. Armá tu pedido y envialo por WhatsApp.">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-:root{--red:#b31319;--mustard:#e0b015;--cream:#fff7e9;--line:rgba(255,255,255,.12)}
-*{box-sizing:border-box} html,body{height:100%}
-body{margin:0;background:radial-gradient(1200px 800px at 10% -10%,#2a2a2a 0%,#141414 60%,#0b0b0b 100%);color:#fff;font-family:Montserrat,system-ui,Arial}
-.wrap{max-width:1100px;margin:0 auto;padding:20px}
-header{display:flex;gap:14px;align-items:center}
-.logo{width:66px;height:66px;border-radius:16px;background:#fff;object-fit:contain;padding:8px}
-.title{font-family:"Bebas Neue";font-size:56px;line-height:.9;margin:2px 0;color:var(--cream);letter-spacing:1px;text-shadow:0 2px 0 #000}
-.badge{display:inline-block;background:var(--mustard);color:#111;font-weight:900;padding:6px 10px;border-radius:999px;letter-spacing:.6px}
-.sub{opacity:.9}
-.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
-a.link{color:var(--mustard);font-weight:800;text-decoration:none}
-.panel{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid var(--line);border-radius:18px;padding:14px;margin:16px 0}
-.marquee{margin:16px 0;padding:12px;border:2px dashed var(--line);border-radius:18px;background:rgba(255,255,255,.04)}
-.tabs{display:flex;gap:8px;flex-wrap:wrap}
-.tab{cursor:pointer;border:none;border-radius:999px;padding:10px 14px;background:linear-gradient(#262626,#1a1a1a);color:#fff;font-weight:900}
-.tab.active{background:linear-gradient(180deg,var(--red),#760a0e)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-.card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03))}
-.pic{width:100%;height:140px;object-fit:cover;display:block;background:#343434}
-.cnt{padding:12px}
-.name{margin:0 0 4px;font-size:18px;font-weight:900}
-.desc{opacity:.85;font-size:13px;min-height:32px}
-.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:8px}
-.price{font-weight:900}
-input[type="number"]{background:#101010;border:1px solid #333;color:#fff;border-radius:10px;padding:8px;width:70px}
-.btn{cursor:pointer;border-radius:12px;border:1px solid #333;background:linear-gradient(#212121,#171717);color:#fff;font-weight:900;padding:10px 14px;text-decoration:none}
-.btn.primary{background:linear-gradient(180deg,var(--red),#7e0c10);border-color:#4a070a}
-.cart .line{display:flex;justify-content:space-between;gap:10px;margin:6px 0}
-.total{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
-footer{opacity:.75;text-align:center;border-top:1px dashed var(--line);padding:16px;margin-top:18px;font-size:12px}
-@media (max-width:640px){ .title{font-size:42px} .pic{height:120px} }
+:root{--bg:#0d0f15;--panel:#121521;--ink:#e5e7eb;--line:#000;--red:#e11d2e;--cream:#fff5e1;--mint:#2dd4bf}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
+.header{position:sticky;top:0;z-index:40;background:rgba(8,10,15,.8);backdrop-filter:blur(8px);border-bottom:4px solid #000}
+.container{max-width:1100px;margin:0 auto;padding:0 14px}
+.checkers{background:conic-gradient(#000 90deg,#fff 90deg 180deg,#000 180deg 270deg,#fff 270deg) 0 0/22px 22px}
+.brand{font-weight:900;letter-spacing:.3px}
+.neon{font-weight:900;color:#ff93a0;text-shadow:0 0 10px #ff98a9,0 0 26px #ff5b7a}
+.card{background:var(--panel);border:2px solid #000;border-radius:16px;box-shadow:0 4px 0 #000}
+.btn{padding:.8rem 1rem;border-radius:14px;background:linear-gradient(180deg,#ff6b6b,var(--red));color:#fff;font-weight:900;border:2px solid #000;box-shadow:0 4px 0 #000;text-transform:uppercase}
+.btn-ghost{padding:.55rem .9rem;border-radius:12px;background:#0f1420;color:#e5e7eb;border:2px solid #000;box-shadow:0 3px 0 #000}
+.badge{padding:.2rem .6rem;border-radius:999px;border:2px solid #000;background:#0f172a;font-size:.8rem}
+.grid{display:grid;gap:14px}
+.menu-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.card-check{border-image:repeating-linear-gradient(90deg,#000 0 12px,#fff 12px 24px) 10;border-width:10px;border-style:solid;border-radius:14px;background:#0f1116}
+.price{font-variant-numeric:tabular-nums}
+.input,select,textarea{background:#0e111a;border:2px solid #000;color:#f1f5f9;border-radius:12px;padding:.6rem .8rem}
+footer{margin-top:36px}
+small{opacity:.8}
 </style>
-</head>
-<body>
-<div class="wrap">
-  <header>
-    <img class="logo" alt="Planeta Trevare"
-         src="" onload="this.src=encodeURI('images/LOGO TREVARE.png')"
-         onerror="this.outerHTML='<div class=&quot;logo&quot; style=&quot;display:grid;place-items:center;color:#111;font-weight:900;letter-spacing:.2px;line-height:1;text-align:center;font-size:11px&quot;>PLANETA<br>TREVARE</div>'">
-    <div>
-      <div class="badge">DINER · 1955</div>
-      <div class="title">PLANETA TREVARE</div>
-      <div class="sub">Giganacovo 480 · San Miguel del Monte</div>
-      <div class="links">
-        <a class="link" href="https://www.instagram.com/planetatrevare?igsh=MXJibWZ6MHE2NDA4bg==" target="_blank">Instagram</a>
-        <a class="link" href="https://maps.app.goo.gl/r4xi557wcGsAoPvA6?g_st=ac" target="_blank">Google Maps</a>
-        <a class="link" href="https://wa.me/5492271414132" target="_blank">WhatsApp directo</a>
+</head><body>
+<div class="checkers" style="height:8px"></div>
+<header class="header"><div class="container" style="padding:10px 0">
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+    <div style="display:flex;align-items:center;gap:10px">
+      <div style="height:44px;width:44px;border:2px solid #000;border-radius:12px;background:#000 url('https://i.imgur.com/8o8O2d3.png') center/cover no-repeat"></div>
+      <div>
+        <div class="brand" style="font-size:20px">Planeta Trevare</div>
+        <small>Fast Food • Diner 1955</small>
       </div>
     </div>
-  </header>
-
-  <div class="marquee">🕓 Horarios: Mar–Jue 12:00–14:00 y 19:00–23:00 · Vie–Dom 12:00–14:00 y 19:00–00:00</div>
-
-  <div class="panel">
-    <strong>Categorías</strong>
-    <div id="tabs" class="tabs"></div>
-  </div>
-
-  <div id="catalogo" class="grid"></div>
-
-  <div class="panel">
-    <strong>Tu pedido</strong>
-    <div id="carritoVacio" class="sub" style="margin-top:6px">Sin ítems todavía.</div>
-    <div id="carrito"></div>
-    <div class="total"><span>Total estimado</span><strong id="monto">$0</strong></div>
-    <div class="row" style="margin-top:8px">
-      <input id="nombre" type="text" placeholder="Tu nombre (opcional)">
-      <input id="direccion" type="text" placeholder="Dirección si es delivery (opcional)">
-    </div>
-    <div class="row" style="margin-top:8px">
-      <button class="btn" onclick="limpiar()">Limpiar</button>
-      <a class="btn primary" href="#" onclick="enviarWpp(event)">Confirmar por WhatsApp</a>
+    <div style="display:flex;gap:8px;align-items:center">
+      <span id="openBadge" class="badge">Cargando…</span>
+      <a class="btn-ghost" href="https://maps.app.goo.gl/63pF4NPwV2YDski79" target="_blank">Ubicación</a>
+      <a class="btn" id="btnCart">Carrito</a>
     </div>
   </div>
+</div></header>
 
-  <footer>© <span id="y"></span> Planeta Trevare — Retro diner 1955.</footer>
-</div>
+<main class="container">
+  <section class="card" style="overflow:hidden;margin-top:14px">
+    <div class="checkers" style="height:8px"></div>
+    <div class="grid" style="grid-template-columns:1fr 1fr;padding:14px;gap:14px">
+      <div>
+        <div class="neon" style="font-size:34px;line-height:1.1">Retro • Hot & Crispy</div>
+        <p>Pollo Frito, Hot Dogs, Papas y más. Retiro o Delivery. Hasta <b>2 salsas sin cargo</b>.</p>
+        <div style="display:flex;gap:8px"><span class="btn-ghost">KDS</span><span class="btn-ghost">Ticket térmico</span><span class="btn-ghost">Sin comisión</span></div>
+      </div>
+      <div class="checkers" style="height:120px;border-radius:12px"></div>
+    </div>
+  </section>
+
+  <!-- Filtros -->
+  <section class="card" style="padding:10px;margin-top:14px">
+    <div id="tabs" style="display:flex;gap:8px;overflow:auto"></div>
+    <div id="subtabs" style="display:flex;gap:8px;margin-top:8px;overflow:auto"></div>
+  </section>
+
+  <!-- Productos -->
+  <section id="grid" class="menu-grid" style="margin-top:14px"></section>
+
+  <!-- Horarios + Contacto -->
+  <section class="grid" style="grid-template-columns:1fr 1fr;margin-top:14px">
+    <div class="card" style="padding:12px">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h3 style="margin:0">Horarios</h3><span id="openNow" class="badge">—</span>
+      </div>
+      <div id="hours" style="margin-top:8px;font-size:.95rem"></div>
+    </div>
+    <div class="card" style="padding:12px">
+      <h3 style="margin:0">Contacto</h3>
+      <div style="margin-top:6px;font-size:.95rem">
+        📱 WhatsApp: <b>+54 9 2226 50 2227</b><br>
+        📍 San Miguel del Monte, Buenos Aires
+      </div>
+      <div style="display:flex;gap:8px;margin-top:10px">
+        <a class="btn" target="_blank" href="https://wa.me/5492226502227">Pedir por WhatsApp</a>
+        <a class="btn-ghost" target="_blank" href="https://www.instagram.com/planetatrevare?igsh=MXJibWZ6MHE2NDA4bg==">Instagram</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Drawer carrito (simple) -->
+<div id="backdrop" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5)"></div>
+<aside id="drawer" style="display:none;position:fixed;right:0;top:0;height:100%;width:420px;max-width:100vw;background:#0e1118;border-left:4px solid #000;box-shadow:-18px 0 0 #000;display:flex;flex-direction:column">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:12px;border-bottom:1px solid #000">
+    <div><div style="font-size:12px;opacity:.8">Pedido</div><div style="font-size:18px;font-weight:800">Tu carrito</div></div>
+    <button id="closeCart" class="btn-ghost">Cerrar</button>
+  </div>
+  <div id="cartEmpty" style="padding:12px;opacity:.75">Vacío. Agregá productos.</div>
+  <div id="cartItems" style="display:none;padding:12px;overflow:auto;flex:1"></div>
+  <div style="padding:12px;border-top:1px solid #000">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+      <div>Subtotal</div><div id="subtotal" style="text-align:right" class="price">$0</div>
+      <div>Envío</div><div id="ship" style="text-align:right" class="price">$0</div>
+      <div style="font-weight:800">Total</div><div id="total" style="text-align:right" class="price">$0</div>
+    </div>
+    <hr style="border:none;border-top:1px dashed #000;margin:10px 0">
+    <select id="zone" class="input" style="width:100%">
+      <option value="pickup|0">Retiro en local — $0</option>
+      <option value="Zona A|1500">Zona A — $1.500</option>
+      <option value="Zona B|2500">Zona B — $2.500</option>
+    </select>
+    <input id="cust" class="input" placeholder="Nombre y apellido" style="width:100%;margin-top:8px">
+    <input id="phone" class="input" placeholder="WhatsApp" style="width:100%;margin-top:8px">
+    <input id="addr" class="input" placeholder="Dirección (si es delivery)" style="width:100%;margin-top:8px">
+    <select id="pay" class="input" style="width:100%;margin-top:8px">
+      <option>Efectivo</option><option>Transferencia</option><option>Tarjeta/Débito</option><option>QR</option><option>MercadoPago</option>
+    </select>
+    <button id="send" class="btn" style="width:100%;margin-top:8px">Enviar pedido</button>
+    <div id="thanks" style="display:none;color:#2dd4bf;margin-top:6px;font-size:.9rem">Listo ✅ Te confirmamos por WhatsApp.</div>
+  </div>
+</aside>
+
+<footer><div class="checkers" style="height:10px"></div>
+  <div class="container" style="text-align:center;padding:12px;font-size:.85rem;opacity:.85">
+    © <span id="year"></span> Planeta Trevare — planetatrevare.com
+  </div>
+</footer>
 
 <script>
-/* ========== MENÚ (usa los nombres EXACTOS que subiste) ========== */
-const MENU = [
-  // HOT DOGS
-  {cat:"Hot Dogs", name:"Clásico Galáctico", price:4500,
-   desc:"Pan suave, salchicha, aderezo de la casa", pic:"images/clasico.jpeg"},
-  {cat:"Hot Dogs", name:"Astro‑Bacon", price:5200,
-   desc:"Bacon crocante + cheddar", pic:"images/nashville.jpeg"},
-  {cat:"Hot Dogs", name:"Pizza Lunar", price:5200,
-   desc:"Salsa de tomate + muzza", pic:"images/tradi.jpeg"},
-  {cat:"Hot Dogs", name:"Nacho Intergaláctico", price:6000,
-   desc:"Cheddar + nachos", pic:"images/nacho.jpeg"},
-  {cat:"Hot Dogs", name:"Nórdico", price:5800,
-   desc:"Pepinos, eneldo, salsa especial", pic:"images/nordico.jpeg"},
-  {cat:"Hot Dogs", name:"Picoso", price:5800,
-   desc:"Salsa picante de la casa", pic:"images/picoso.jpeg"},
-  {cat:"Hot Dogs", name:"Provoleta", price:6100,
-   desc:"Provoleta fundida + chimichurri", pic:"images/provoleta.jpeg"},
+const $=s=>document.querySelector(s), ars=n=>n.toLocaleString('es-AR',{style:'currency',currency:'ARS',maximumFractionDigits:0});
+const DATA={
+  hours:{mon:[],tue:[["12:00","14:00"],["19:00","23:00"]],wed:[["12:00","14:00"],["19:00","23:00"]],
+        thu:[["12:00","14:00"],["19:00","23:00"]],fri:[["12:00","14:00"],["19:00","24:00"]],
+        sat:[["12:00","14:00"],["19:00","24:00"]],sun:[["12:00","14:00"],["19:00","24:00"]]},
+  cats:[
+    {id:"fried",name:"Sándwiches Cráter",items:[
+      ["Crater Classic","Pollo frito, mayonesa, lechuga y tomate.",9500],
+      ["Crater Spicy Nashville","Pollo frito con salsa Nashville, mayo ajo y pepinillos.",9500],
+      ["Crater Relish Burst","Pollo frito, mayo de ajo, queso dambo y relish.",9500],
+      ["Crater Prime","Pollo Cráter Prime, salsa Trevare, bacon, cheddar, pepinillos.",9500],
+      ["Crater Slaw","Pollo frito, mayo base, coleslaw y toque BBQ.",9500]
+    ]},
+    {id:"hotdogs",name:"Hot Dogs Especiales",sub:[
+      {id:"clas",name:"Clásicos",items:[
+        ["Clásico Galáctico","Elegí aderezos. Salchicha alemana. Pan artesanal con queso gratinado.",7000],
+        ["Roca Azul","Muzzarella y queso azul.",7000],
+        ["Pizza Lunar","Tomate, muzza, orégano y aceitunas.",7000],
+        ["Provoleta Estelar","Provoleta y salsa criolla.",7000]
+      ]},
+      {id:"prem",name:"Premium",items:[
+        ["Astro-Bacon","Cheddar y bacon.",7500],
+        ["Nacho Intergaláctico","Cheddar, salsa criolla y nachos.",7500],
+        ["Mediterráneo Cósmico","Mayo, tomate, papas pay, ali oli, parmesano y aceitunas negras.",7500]
+      ]},
+      {id:"delx",name:"Deluxe",items:[
+        ["Mc Planet","Salsa 1/4 de libra, cheddar, bacon, cebolla y BBQ.",8000],
+        ["Big Bang Picoso","Salsa mexicana, ketchup hot, ají picante y jalapeño.",8000],
+        ["Estrella Venezolano","Repollo, zanahoria, parmesano, cebolla, mayo, ketchup y mostaza.",8000],
+        ["Estación Guacamole","Guacamole, tomate y mayonesa.",8000]
+      ]}
+    ]},
+    {id:"meteoritos",name:"Meteoritos Trevare",items:[["Meteoritos Trevare","Bocados de pollo frito estilo popcorn.",11500]]},
+    {id:"teq",name:"Tequeños x3",items:[["Tequeños de QUESO x3 + 1 Dip","Palitos crujientes con queso + 1 dip.",4500]]},
+    {id:"snack",name:"Snack Trevare",items:[
+      ["Bandeja de Nachos","Elegí salsa: picosa / criolla / cheddar.",9500],
+      ["Aros de cebolla (8 u)","Aros crocantes.",5000]
+    ]},
+    {id:"pancho",name:"Panchos Clásicos",items:[["Pancho Tradicional","Super pancho de viena + aderezos.",2300]]},
+    {id:"fries",name:"Papas Craterizadas",items:[
+      ["M (Simple)","Simple o con aderezos.",7500],
+      ["XL (Simple)","Simple o con aderezos.",10500],
+      ["XXL (Simple)","Simple o con aderezos.",12500],
+      ["M (Completo)","Cheddar, bacon, verdeo y aderezos.",9500],
+      ["XL (Completo)","Cheddar, bacon, verdeo y aderezos.",12000],
+      ["XXL (Completo)","Cheddar, bacon, verdeo y aderezos.",14000]
+    ]},
+    {id:"salchi",name:"Salchipapa",items:[
+      ["M (Salchipapa)","Papas, salchichas, verdeo, cheddar, bacón y aderezos.",11000],
+      ["XL (Salchipapa)","",13000],
+      ["XXL (Salchipapa)","",15500]
+    ]},
+    {id:"drinks",name:"Bebidas (latas)",items:[
+      ["Coca-Cola 354 ml","Lata",3000],
+      ["Coca-Cola Zero 354 ml","Lata",3000],
+      ["Sprite 354 ml","Lata",3000]
+    ]}
+  ]
+};
 
-  // CRÁTER PRIME (POLLO) / METEORITOS
-  {cat:"Cráter Prime (Pollo)", name:"Filet XL Cráter Pro", price:6900,
-   desc:"Rebozado crujiente XL", pic:"images/m completo.jpeg"},
-  {cat:"Cráter Prime (Pollo)", name:"Meteoritos Trevare", price:5900,
-   desc:"Popcorn de pollo + salsas", pic:"images/vnz.jpeg"},
+let CART=[], ACTIVE=DATA.cats[0].id, SUB=null;
 
-  // PAPAS & EXTRAS
-  {cat:"Papas & Extras", name:"Papas craterizadas", price:3900,
-   desc:"Crocantes · corte perfecto", pic:"images/salchipapa.jpeg"},
-  {cat:"Papas & Extras", name:"Guacamole", price:1800,
-   desc:"Adicional", pic:"images/guacamole.jpeg"},
-  {cat:"Papas & Extras", name:"Cheddar Extra", price:1200,
-   desc:"Adicional de cheddar", pic:"images/tradis.jpeg"},
-
-  // CORN DOGS
-  {cat:"Corn Dogs", name:"Clásico", price:4800,
-   desc:"Salchicha rebozada", pic:"images/tradi.jpeg"},
-
-  // BEBIDAS (genéricas por ahora)
-  {cat:"Bebidas", name:"Coca-Cola 500ml", price:2200, desc:"", pic:"images/tradis.jpeg"},
-  {cat:"Bebidas", name:"Sprite 500ml",  price:2200, desc:"", pic:"images/tradis.jpeg"},
-
-  // SNACKS
-  {cat:"Snacks", name:"Tequeños", price:4500,
-   desc:"Palitos crujientes de queso", pic:"images/tradis.jpeg"},
-];
-const PHONE = "5492271414132";
-/* ================================================================ */
-
-const pesos = n => "$" + n.toLocaleString("es-AR");
-const $ = s => document.querySelector(s);
-const tabsEl = $("#tabs"), catEl = $("#catalogo"), cartEl=$("#carrito"),
-      vacioEl=$("#carritoVacio"), montoEl=$("#monto");
-document.getElementById("y").textContent = new Date().getFullYear();
-
-const CATS=[...new Set(MENU.map(x=>x.cat))];
-let filtro=null;
-const CART=new Map(); // name -> {qty, price}
-
-function renderTabs(){
-  tabsEl.innerHTML="";
-  const all=btn("Todas", !filtro, ()=>{filtro=null; render();});
-  tabsEl.appendChild(all);
-  CATS.forEach(c=>tabsEl.appendChild(btn(c, filtro===c, ()=>{filtro=c; render();})));
+function isOpen(){
+  const d=new Date(), k=["sun","mon","tue","wed","thu","fri","sat"][d.getDay()], hs=DATA.hours[k]||[];
+  let open=false; hs.forEach(([o,c])=>{const s=new Date(d), e=new Date(d);
+    const [oh,om]=o.split(":"), [ch,cm]=c.split(":"); s.setHours(+oh,+om,0,0); e.setHours(+ch,+cm,0,0);
+    if(+e<+s) e.setDate(e.getDate()+1); if(d>=s && d<=e) open=true;});
+  return open;
 }
-function btn(text, active, on){ const b=document.createElement("button"); b.className="tab"+(active?" active":""); b.textContent=text; b.onclick=on; return b; }
 
-function render(){
-  renderTabs(); catEl.innerHTML="";
-  const items = MENU.filter(x=>!filtro || x.cat===filtro);
-  const byCat={}; items.forEach(p=>{(byCat[p.cat]??=[]).push(p);});
-  Object.entries(byCat).forEach(([cat,arr])=>{
-    const box=document.createElement("div"); box.className="panel"; box.style.gridColumn="1/-1";
-    box.innerHTML=`<h3 style="margin:0 0 8px;font-family:'Bebas Neue';font-size:28px;letter-spacing:.5px">${cat}</h3><div class="grid"></div>`;
-    const g=box.querySelector(".grid"); arr.forEach(p=>g.appendChild(card(p)));
-    catEl.appendChild(box);
+function renderHours(){
+  const H=[["mon","Lunes"],["tue","Martes"],["wed","Miércoles"],["thu","Jueves"],["fri","Viernes"],["sat","Sábado"],["sun","Domingo"]];
+  const box=$("#hours"); box.innerHTML="";
+  H.forEach(([k,n])=>{
+    const r=document.createElement("div"); r.style.display="flex"; r.style.justifyContent="space-between"; r.style.borderBottom="1px dashed #000"; r.style.padding="4px 0";
+    const hs=(DATA.hours[k]||[]).map(([a,b])=>`${a}–${b}`).join(" / ") || "Cerrado";
+    r.innerHTML=`<span>${n}</span><span style="opacity:.8">${hs}</span>`; box.appendChild(r);
   });
-  renderCart();
+  $("#openBadge").textContent=isOpen()?"Abierto ahora":"Cerrado (programá)";
+  $("#openNow").textContent=$("#openBadge").textContent;
 }
 
-function card(p){
-  const d=document.createElement("div"); d.className="card";
-  const src = p.pic ? encodeURI(p.pic) : "";
-  d.innerHTML = `
-    <img class="pic" src="${src}" alt="${p.name}"
-         onerror="this.src='https://dummyimage.com/800x500/2a2a2a/ffffff&text=Sin+foto'">
-    <div class="cnt">
-      <div class="name">${p.name}</div>
-      <div class="desc">${p.desc||""}</div>
-      <div class="row">
-        <div class="price">${pesos(p.price)}</div>
-        <input type="number" min="1" value="1">
-        <button class="btn primary">Agregar</button>
-      </div>
-    </div>`;
-  const qty=d.querySelector('input[type="number"]');
-  d.querySelector("button").onclick=()=>add(p, Math.max(1,parseInt(qty.value||"1",10)));
+function card(name,desc,price){
+  const d=document.createElement("div"); d.className="card-check"; d.style.padding="10px";
+  d.innerHTML=`<div style="font-weight:900;font-size:1.05rem">${name}</div>
+  <div style="opacity:.8;font-size:.95rem">${desc||""}</div>
+  <div class="price" style="font-weight:900;margin-top:6px">${ars(price)}</div>
+  <button class="btn" style="width:100%;margin-top:8px">Agregar</button>`;
+  d.querySelector("button").onclick=()=>add(name,price);
   return d;
 }
-
-function add(prod, q){
-  const prev=CART.get(prod.name)||{qty:0,price:prod.price};
-  prev.qty+=q; CART.set(prod.name, prev); renderCart();
+function add(name,price){
+  const i=CART.findIndex(x=>x.name===name);
+  if(i>=0) CART[i].qty++; else CART.push({name,price,qty:1});
+  renderCart(); openDrawer(true);
 }
 function renderCart(){
-  cartEl.innerHTML=""; let total=0;
-  if(CART.size===0){vacioEl.style.display="block"; montoEl.textContent="$0"; return;}
-  vacioEl.style.display="none";
-  for(const [name,item] of CART.entries()){
-    const sub=item.qty*item.price; total+=sub;
-    const line=document.createElement("div"); line.className="line";
-    line.innerHTML=`<div>${name} × ${item.qty}</div><div>${pesos(sub)}</div>`;
-    cartEl.appendChild(line);
-  }
-  montoEl.textContent=pesos(total);
+  const empty=$("#cartEmpty"), list=$("#cartItems");
+  if(!CART.length){ empty.style.display="block"; list.style.display="none"; return; }
+  empty.style.display="none"; list.style.display="block"; list.innerHTML="";
+  let sub=0; CART.forEach((it,ix)=>{ sub+=it.price*it.qty;
+    const r=document.createElement("div"); r.className="card"; r.style.padding="10px";
+    r.innerHTML=`<div style="display:flex;justify-content:space-between;gap:8px">
+      <div><b>${it.qty}× ${it.name}</b><div class="price" style="font-weight:900">${ars(it.price*it.qty)}</div></div>
+      <div><button class="btn-ghost" id="m${ix}">−</button> <button class="btn-ghost" id="p${ix}">＋</button></div>
+    </div>`;
+    list.appendChild(r);
+    $("#m"+ix).onclick=()=>{ if(it.qty>1) it.qty--; else CART.splice(ix,1); renderCart(); };
+    $("#p"+ix).onclick=()=>{ it.qty++; renderCart(); };
+  });
+  const fee=($("#zone").value||"pickup|0").split("|")[1]*1||0;
+  $("#subtotal").textContent=ars(sub); $("#ship").textContent=ars(fee); $("#total").textContent=ars(sub+fee);
 }
-function limpiar(){ CART.clear(); renderCart(); }
+function openDrawer(x){ $("#backdrop").style.display=x?"block":"none"; $("#drawer").style.display=x?"flex":"none"; }
+$("#btnCart").onclick=()=>openDrawer(true); $("#closeCart").onclick=()=>openDrawer(false); $("#backdrop").onclick=()=>openDrawer(false);
 
-function enviarWpp(e){
-  e.preventDefault();
-  if(CART.size===0){ alert("Agregá al menos 1 producto 🙏"); return; }
-  const nombre=$("#nombre").value.trim(), dir=$("#direccion").value.trim();
-  let msg="Hola Planeta Trevare! Quiero hacer un pedido:%0A%0A"; let total=0;
-  for(const [name,item] of CART.entries()){
-    const sub=item.qty*item.price; total+=sub;
-    msg+=`• ${name} x${item.qty} — ${pesos(sub)}`+"%0A";
-  }
-  msg+=`%0ATotal estimado: ${pesos(total)}`;
-  if(nombre) msg+=`%0A%0ANombre: ${encodeURIComponent(nombre)}`;
-  if(dir) msg+=`%0ADirección: ${encodeURIComponent(dir)}`;
-  window.location.href=`https://wa.me/${PHONE}?text=${msg}`;
+function buildTabs(){
+  const t=$("#tabs"); t.innerHTML=""; DATA.cats.forEach(c=>{
+    const b=document.createElement("button"); b.className="btn-ghost"; b.textContent=c.name; if(c.id===ACTIVE) b.style.outline="3px solid var(--mint)";
+    b.onclick=()=>{ ACTIVE=c.id; SUB=null; buildTabs(); buildSub(); buildGrid(); }; t.appendChild(b);
+  });
+}
+function buildSub(){
+  const st=$("#subtabs"); st.innerHTML=""; const cat=DATA.cats.find(c=>c.id===ACTIVE); if(!cat||!cat.sub) return;
+  (cat.sub||[]).forEach((sc,i)=>{ const b=document.createElement("button"); b.className="btn-ghost"; b.textContent=sc.name; if((SUB??cat.sub[0].id)===sc.id) b.style.outline="3px solid var(--mint)";
+    b.onclick=()=>{ SUB=sc.id; buildSub(); buildGrid(); }; st.appendChild(b);
+  });
+}
+function buildGrid(){
+  const g=$("#grid"); g.innerHTML=""; const cat=DATA.cats.find(c=>c.id===ACTIVE); if(!cat) return;
+  if(cat.sub){ const sc=cat.sub.find(s=>s.id===(SUB||cat.sub[0].id)); (sc.items||[]).forEach(([n,d,p])=>g.appendChild(card(n,d,p)));
+  } else { (cat.items||[]).forEach(([n,d,p])=>g.appendChild(card(n,d,p))); }
 }
 
-render();
+$("#send").onclick=()=>{
+  if(!CART.length){ alert("Agregá productos"); return; }
+  const [zoneName,feeStr]=($("#zone").value||"pickup|0").split("|"); const fee=+feeStr||0;
+  const sub=CART.reduce((s,i)=>s+i.price*i.qty,0), total=sub+fee;
+  const body=encodeURIComponent(
+    `Hola, soy ${$("#cust").value||"Cliente"}.\n`+
+    `Pedido:\n`+CART.map(i=>`• ${i.qty}× ${i.name} — ${ars(i.price)}`).join("\n")+
+    `\nEnvío: ${ars(fee)}\nTotal: ${ars(total)}\nEntrega: ${zoneName} ${$("#addr").value||""}\nPago: ${$("#pay").value}\n— planetatrevare.com`
+  );
+  window.open(`https://wa.me/5492226502227?text=${body}`,"_blank");
+  CART=[]; renderCart(); $("#thanks").style.display="block";
+};
+
+$("#year").textContent=new Date().getFullYear();
+renderHours(); buildTabs(); buildSub(); buildGrid();
 </script>
-</body>
-</html>
+</body></html>
